@@ -1,6 +1,6 @@
-question_groups = [
+group_lists = [
 	['test_',
-		['Question text',
-			['incorrect', 'correct', 'incorrect'], 3],
+		['AAA', 1,[0, 1]],
+		['ABCD', 5,[1, 2]],		
 	],
 ]
