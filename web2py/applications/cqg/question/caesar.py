@@ -9,9 +9,9 @@ class multiple_choice:
 		self.question_library_path = question_library_path
 		self.question_path = question_path
 
-		self.question_text = config.question_text
-		self.answers = config.answers
-		self.correct_answer = config.correct_answer
+		self.plaintext = config.plaintext
+		self.key = config.key
+		self.hotspots = config.hotspots
 	
 	def get_question_library_path(self):
 		return self.question_library_path
@@ -22,19 +22,20 @@ class multiple_choice:
 	def get_css(self,answer):
 		return style
 
+	# TODO FIX ME
 	def get_html(self,answer):
 		html = "<div>"
-		html += "<p>" + self.question_text + "</p>"
+		html += "<p>" + self.plaintext + "</p>"
 
-		if type(self.correct_answer) is list:
+		if type(self.hotspots) is list:
 			buttons = html_util.get_checkbox_set('answer',
-			 range(len(self.answers)),answer['answer']) # DR1
+			 range(len(self.key)),answer['answer']) # DR1
 		else:
 			buttons = html_util.get_radio_button_set('answer',
-			 range(len(self.answers)),answer['answer']) # DR2
+			 range(len(self.key)),answer['answer']) # DR2
 
 		html += "<table style=''>\n"
-		for i in range(len(self.answers)):
+		for i in range(len(self.key)):
 			# add 'id' attribute so that <label> will work
 			buttons[i] = buttons[i].replace("<input", # DR3, DR4
 			 "<input id='button_%i'" % i)
@@ -42,7 +43,7 @@ class multiple_choice:
 			 "<td class='top'>%s</td>"
 			 "<td class='left'>"
 			 "<label for='button_%i'>%s</label></td></tr>\n") \
-			 % (buttons[i],i,self.answers[i]) # DR5, DR6
+			 % (buttons[i],i,self.key[i]) # DR5, DR6
 			html += "<tr><td></td><td></td></tr>\n" # spacing row
 		html += "</table>"
 
@@ -51,13 +52,14 @@ class multiple_choice:
 	def get_input_element_ids(self):
 		return ['answer']
 	
+	# TODO FIX ME
 	def check_answer(self,answer):
 		try:
-			if type(self.correct_answer) is list:
+			if type(self.hotspots) is list:
 				answer_list = [int(i) for i in answer['answer']] #DR1
-				return set(answer_list) == set(self.correct_answer)
+				return set(answer_list) == set(self.hotspots)
 			else:
-				return int(answer['answer']) == self.correct_answer #DR2
+				return int(answer['answer']) == self.hotspots #DR2
 		except:
 			return False
 
