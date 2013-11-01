@@ -12,13 +12,13 @@ condition_list = [
 	['group_list_type',
 		"'group_list' is a list"],
 	['list_format',
-		'Each group_list is a list of length at least 2'],	
+		'Each list is a list of length at least 2'],	
 	['list_unique',
 		'list[0] is a unique string'],
 	['question_format',
 		'Each question is a list of length 3'],
-	['question_text',
-		"'question_text' is a string"],
+	['plaintext',
+		"'plaintext' is a string"],
 	['key_format',
 		"key is a positive integer less than 26"],
 	['hotspots_format',
@@ -53,7 +53,7 @@ def verify_conditions(template,condition_list):
 				 '\n\tquestion: ' + str(question)
 
 			if not (type(question[0]) == str):
-				return conditions_dictionary['question_text']+\
+				return conditions_dictionary['plaintext']+\
 				 '\n\tquestion: ' + str(question)
 
 			if not (type(question[1]) == int and 0 <= question[1] < 26):
