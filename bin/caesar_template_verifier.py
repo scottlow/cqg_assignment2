@@ -18,9 +18,9 @@ condition_list = [
 	['question_format',
 		'Each question is a list of length 3'],
 	['plaintext',
-		"'plaintext' is a string"],
+		"'plaintext' is a string of uppercase letters (A-Z)"],
 	['key_format',
-		"key is a positive integer less than 26"],
+		"key is a positive integer < 26 and >= 0"],
 	['hotspots_format',
 		"'hotspots' is a list of "
 		"indeces into plaintext"],
@@ -52,7 +52,7 @@ def verify_conditions(template,condition_list):
 				 conditions_dictionary['question_format'] + \
 				 '\n\tquestion: ' + str(question)
 
-			if not (type(question[0]) == str):
+			if not (type(question[0]) == str and question[0].isalpha() and question[0].isupper()):
 				return conditions_dictionary['plaintext']+\
 				 '\n\tquestion: ' + str(question)
 
