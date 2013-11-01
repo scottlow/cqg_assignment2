@@ -33,10 +33,10 @@ for group in template.group_list:
 			os.mkdir(path)
 
 		config_string = template_string
-		config_string = config_string.replace('$q',
-		 "r'''"+question_text+"'''")
-		config_string = config_string.replace('$a',str(answers))
-		config_string = config_string.replace('$c',str(correct_answer))
+		config_string = config_string.replace('$p',
+		 "r'''"+plaintext+"'''")
+		config_string = config_string.replace('$k',str(key))
+		config_string = config_string.replace('$h',str(hotspots))
 
 		file_util.write_string(
 		 os.path.join(path,'cqg_config.py'), config_string)
