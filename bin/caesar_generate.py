@@ -5,16 +5,16 @@ import os
 import file_util
 
 template_string = '''\
-product_family = 'multiple_choice'
-question_type = 'multiple_choice'
+product_family = 'caesar'
+question_type = 'caesar'
 
-question_text = $q
-answers = $a
-correct_answer = $c
+plaintext = $p
+key = $k
+hotspots = $h
 '''
 
 if len(sys.argv) != 3:
-	print 'Usage: multiple_choice_generate.py template question_directory'
+	print 'Usage: caesar_generate.py template question_directory'
 	sys.exit(1)
 
 try:
@@ -23,10 +23,10 @@ except ImportError:
 	print 'Failure while importing',sys.argv[1]
 	sys.exit(2)
 
-for group in template.question_groups:
+for group in template.group_list:
 	prefix = group[0]
 	question_id = 0
-	for (question_text,answers,correct_answer) in group[1:]:
+	for (plaintext,key,hotspots) in group[1:]:
 		path = os.path.join(sys.argv[2],prefix+str(question_id))
 
 		if not os.path.exists(path):
