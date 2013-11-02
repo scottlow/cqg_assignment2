@@ -1,8 +1,9 @@
 import os
 import file_util
 import html_util
+import caesar_util
 
-class multiple_choice:
+class caesar:
 	def __init__(self,question_library_path,question_path):
 		config = file_util.dynamic_import(os.path.join(
 		 question_library_path,question_path,'cqg_config.py'))
@@ -12,6 +13,7 @@ class multiple_choice:
 		self.plaintext = config.plaintext
 		self.key = config.key
 		self.hotspots = config.hotspots
+		self.ciphertext = caesar_util.caeser_encrypt(self.plaintext, self.key)
 	
 	def get_question_library_path(self):
 		return self.question_library_path
@@ -22,32 +24,23 @@ class multiple_choice:
 	def get_css(self,answer):
 		return style
 
-	# TODO FIX ME
-	def get_html(self,answer):
-		html = "<div>"
-		html += "<p>" + self.plaintext + "</p>"
-
-		if type(self.hotspots) is list:
-			buttons = html_util.get_checkbox_set('answer',
-			 range(len(self.key)),answer['answer']) # DR1
-		else:
-			buttons = html_util.get_radio_button_set('answer',
-			 range(len(self.key)),answer['answer']) # DR2
-
-		html += "<table style=''>\n"
-		for i in range(len(self.key)):
-			# add 'id' attribute so that <label> will work
-			buttons[i] = buttons[i].replace("<input", # DR3, DR4
-			 "<input id='button_%i'" % i)
-			html += ("<tr>"
-			 "<td class='top'>%s</td>"
-			 "<td class='left'>"
-			 "<label for='button_%i'>%s</label></td></tr>\n") \
-			 % (buttons[i],i,self.key[i]) # DR5, DR6
-			html += "<tr><td></td><td></td></tr>\n" # spacing row
-		html += "</table>"
-
-		return html + "</div>"
+	def get_html():
+		char_count = 0
+		html = "<style>"
+		html += html_util.make_css_borders(1)
+		html += "<style>"
+		html += "<p>Use a <b>caesar</b> cipher with key %d to encrypt the plain text.</p><center>" % self.key
+		plaintext_list = [("plain text", "right")]
+		for char in self.plaintext:
+			plaintext_list.append(("<tt>" + char + "</tt>", "left_border center"))
+		ciphertext_list = [("cipher text", "top_border right")]
+		for i in range(0, len(self.ciphertext)):
+			if(i in self.hotspots):
+				ciphertext_list.append(("<tt>" + html_util.get_text("char_%i" % i, "", 1) + "</tt>", "left_border top_border"))
+			else:
+				ciphertext_list.append(("<tt>" + char + "</tt>"))
+		html += html_util.get_table([plaintext_list, ciphertext_list], "cellspacing=0 cellpadding=3")
+		html += "</center>"			
 
 	def get_input_element_ids(self):
 		return ['answer']
@@ -62,23 +55,3 @@ class multiple_choice:
 				return int(answer['answer']) == self.hotspots #DR2
 		except:
 			return False
-
-style = '''
-	#question_cell div {
-		text-align:left;
-		width:75%;
-		margin:auto;
-	}
-	#question_cell table, #question_cell td {
-		border:0px;
-	}
-	#question_cell {
-		border:1px solid black;
-	}
-	td.top {
-		vertical-align:top;
-	}
-	td.left {
-		text-align:left;
-	}
-'''
