@@ -24,6 +24,7 @@ class caesar:
 	def get_css(self,answer):
 		return style
 
+	# TODO FIX ME
 	def get_html():
 		char_count = 0
 		html = "<style>"
@@ -40,7 +41,9 @@ class caesar:
 			else:
 				ciphertext_list.append(("<tt>" + char + "</tt>"))
 		html += html_util.get_table([plaintext_list, ciphertext_list], "cellspacing=0 cellpadding=3")
-		html += "</center>"			
+		html += "</center>"	
+
+		return html		
 
 	def get_input_element_ids(self):
 		return ['answer']
