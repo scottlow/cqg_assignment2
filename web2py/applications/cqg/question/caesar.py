@@ -26,10 +26,9 @@ class caesar:
 
 	# TODO FIX ME
 	def get_html():
-		char_count = 0
 		html = "<style>"
 		html += html_util.make_css_borders(1)
-		html += "<style>"
+		html += "</style>"
 		html += "<p>Use a <b>caesar</b> cipher with key %d to encrypt the plain text.</p><center>" % self.key
 		plaintext_list = [("plain text", "right")]
 		for char in self.plaintext:

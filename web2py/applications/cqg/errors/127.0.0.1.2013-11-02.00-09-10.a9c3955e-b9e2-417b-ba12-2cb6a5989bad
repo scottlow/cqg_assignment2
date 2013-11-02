@@ -418,7 +418,7 @@ ssg70
 g159
 sg63
 (lp166
-S'<cStringIO.StringO object at 0x103cb9650>'
+S'<cStringIO.StringO object at 0x103db6650>'
 p167
 asbasbasbag56
 (g72
@@ -2160,7 +2160,7 @@ ssg70
 g722
 sg63
 (lp729
-S"<Values at 0x103cbaf80: {'verbose': False, 'ip': '127.0.0.1', 'shutdown_timeout': 5, 'taskbar': False, 'port': 7777, 'maxthreads': None, 'softcron': False, 'server_name': 'Scotts-MacBook-Pro.local', 'bpython': False, 'nogui': False, 'nocron': False, 'extcron': False, 'debuglevel': 30, 'test': None, 'folder': '/Users/scottlow/cqg/web2py', 'config': '', 'import_models': False, 'winservice': '', 'shell': None, 'run': '', 'log_filename': 'httpserver.log', 'args': [''], 'profiler_filename': None, 'ssl_private_key': '', 'password': 'password', 'request_queue_size': 5, 'ssl_certificate': '', 'cronjob': False, 'plain': False, 'quiet': False, 'interfaces': None, 'minthreads': None, 'timeout': 10, 'numthreads': None, 'pid_filename': 'httpserver.pid'}>"
+S"<Values at 0x103db7f80: {'verbose': False, 'ip': '127.0.0.1', 'shutdown_timeout': 5, 'taskbar': False, 'port': 7777, 'maxthreads': None, 'softcron': False, 'server_name': 'Scotts-MacBook-Pro.local', 'bpython': False, 'nogui': False, 'nocron': False, 'extcron': False, 'debuglevel': 30, 'test': None, 'folder': '/Users/scottlow/cqg/web2py', 'config': '', 'import_models': False, 'winservice': '', 'shell': None, 'run': '', 'log_filename': 'httpserver.log', 'args': [''], 'profiler_filename': None, 'ssl_private_key': '', 'password': 'password', 'request_queue_size': 5, 'ssl_certificate': '', 'cronjob': False, 'plain': False, 'quiet': False, 'interfaces': None, 'minthreads': None, 'timeout': 10, 'numthreads': None, 'pid_filename': 'httpserver.pid'}>"
 p730
 asbasbasbag56
 (g72
@@ -3148,7 +3148,7 @@ ssg70
 g1050
 sg63
 (lp1057
-S'53878'
+S'54005'
 p1058
 asbasbasbag56
 (g72
@@ -3872,7 +3872,7 @@ ssg70
 g1290
 sg63
 (lp1297
-S'<class gluon.rocket.FileWrapper at 0x103936050>'
+S'<class gluon.rocket.FileWrapper at 0x103a20050>'
 p1298
 asbasbasbag56
 (g72
@@ -3938,7 +3938,7 @@ ssg70
 g1312
 sg63
 (lp1319
-S'<socket._fileobject object at 0x1004827d0>'
+S'<socket._fileobject object at 0x1028827d0>'
 p1320
 asbasbasbag56
 (g72
@@ -4819,7 +4819,7 @@ ssg70
 g1603
 sg63
 (lp1610
-S'datetime.datetime(2013, 11, 2, 0, 2, 2, 226611)'
+S'datetime.datetime(2013, 11, 2, 0, 9, 10, 931787)'
 p1611
 asbasbasbag56
 (g72
@@ -5027,7 +5027,7 @@ ssg70
 g1672
 sg63
 (lp1679
-S'cqg/127.0.0.1.2013-11-02.00-02-02.b7eb0475-9988-4bad-9091-5d687d9e2318'
+S'cqg/127.0.0.1.2013-11-02.00-09-10.a9c3955e-b9e2-417b-ba12-2cb6a5989bad'
 p1680
 asbasbasbag56
 (g72
@@ -6621,7 +6621,7 @@ ssg70
 g2189
 sg63
 (lp2196
-S'<class gluon.rocket.FileWrapper at 0x103936050>'
+S'<class gluon.rocket.FileWrapper at 0x103a20050>'
 p2197
 asbasbasbag56
 (g72
@@ -6687,7 +6687,7 @@ ssg70
 g2211
 sg63
 (lp2218
-S'<cStringIO.StringO object at 0x103cb9650>'
+S'<cStringIO.StringO object at 0x103db6650>'
 p2219
 asbasbasbag56
 (g72
@@ -7031,7 +7031,7 @@ S"{'A': <class 'gluon.html.A'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 
 p2333
 sS'ccode'
 p2334
-S'<code object <module> at 0x103cc6e30, file "/Use...py/applications/cqg/controllers/quiz.py", line 1>'
+S'<code object <module> at 0x103dc3e30, file "/Use...py/applications/cqg/controllers/quiz.py", line 1>'
 p2335
 ssS'lnum'
 p2336
@@ -7183,7 +7183,7 @@ sg2330
 (dp2389
 S'global request'
 p2390
-S"<Storage {'function': 'index', 'body': <cStringI....00-02-02.b7eb0475-9988-4bad-9091-5d687d9e2318'}>"
+S"<Storage {'function': 'index', 'body': <cStringI....00-09-10.a9c3955e-b9e2-417b-ba12-2cb6a5989bad'}>"
 p2391
 sS'request.vars'
 p2392
@@ -7338,7 +7338,7 @@ sI28
 S'\tdef get_html():'
 p2442
 sI29
-S'\t\t# char_count = 0'
+S'\t\thtml = "<style>"'
 p2443
 ssg2349
 S"(self=<question.caesar.caesar instance>, answer={'answer': None})"
@@ -7510,7 +7510,7 @@ S"<type 'exceptions.NameError'>"
 p2501
 sS'date'
 p2502
-S'Sat Nov  2 00:02:02 2013'
+S'Sat Nov  2 00:09:10 2013'
 p2503
 sS'response'
 p2504
@@ -7598,7 +7598,7 @@ ssg70
 g2525
 sg63
 (lp2532
-S'<cStringIO.StringO object at 0x103cb9298>'
+S'<cStringIO.StringO object at 0x103db6298>'
 p2533
 asbasbasbag56
 (g72
@@ -8676,7 +8676,7 @@ ssg70
 g2871
 sg63
 (lp2878
-S'Sat, 02 Nov 2013 07:02:02 GMT'
+S'Sat, 02 Nov 2013 07:09:10 GMT'
 p2879
 asbasbasbag56
 (g72
@@ -9036,7 +9036,7 @@ ssg70
 g2990
 sg63
 (lp2997
-S'/Users/scottlow/cqg/web2py/applications/cqg/sessions/127.0.0.1-6a5ee56d-566b-4229-9589-c960b35b49c0'
+S'/Users/scottlow/cqg/web2py/applications/cqg/sessions/127.0.0.1-eae2fedc-981d-4616-926e-ae03dd4b5c0f'
 p2998
 asbasbasbag56
 (g72
@@ -9102,7 +9102,7 @@ ssg70
 g3012
 sg63
 (lp3019
-S'127.0.0.1-6a5ee56d-566b-4229-9589-c960b35b49c0'
+S'127.0.0.1-eae2fedc-981d-4616-926e-ae03dd4b5c0f'
 p3020
 asbasbasbag56
 (g72
