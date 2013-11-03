@@ -39,9 +39,9 @@ class caesar:
 		ciphertext_list = [("cipher text", "top_border right")]
 		for i in range(0, len(self.ciphertext)):
 			if(i in self.hotspots):
-				ciphertext_list.append(("<tt>" + html_util.get_text("char_%i" % i, "", 1) + "</tt>", "left_border top_border"))
+				ciphertext_list.append(("<tt>" + html_util.get_text("char_%i" % i, answer["answer"], 1) + "</tt>", "left_border top_border"))
 			else:
-				ciphertext_list.append(("<tt>" + char + "</tt>", "left_border top_border"))
+				ciphertext_list.append(("<tt>" + self.ciphertext[i] + "</tt>", "left_border top_border"))
 		html += html_util.get_table([plaintext_list, ciphertext_list], "cellspacing=0 cellpadding=3")
 		html += "</center>"	
 
