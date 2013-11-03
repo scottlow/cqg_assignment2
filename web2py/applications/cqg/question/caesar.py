@@ -29,7 +29,7 @@ class caesar:
 		return style
 
 	def get_html(self,answer):
-		html = "<style>"
+		html = "<style type='text/css'>"
 		html += html_util.make_css_borders(1)
 		html += "</style>"
 		html += "<p>Use a <b>caesar</b> cipher with key %d to encrypt the plain text.</p><center>" % self.key
@@ -41,7 +41,7 @@ class caesar:
 			if(i in self.hotspots):
 				ciphertext_list.append(("<tt>" + html_util.get_text("char_%i" % i, "", 1) + "</tt>", "left_border top_border"))
 			else:
-				ciphertext_list.append(("<tt>" + char + "</tt>"))
+				ciphertext_list.append(("<tt>" + char + "</tt>", "left_border top_border"))
 		html += html_util.get_table([plaintext_list, ciphertext_list], "cellspacing=0 cellpadding=3")
 		html += "</center>"	
 
@@ -62,21 +62,28 @@ class caesar:
 		# 	return False
 
 style = '''
-	#question_cell div {
-		text-align:left;
-		width:75%;
-		margin:auto;
-	}
-	#question_cell table, #question_cell td {
-		border:0px;
-	}
-	#question_cell {
-		border:1px solid black;
-	}
-	td.top {
-		vertical-align:top;
-	}
-	td.left {
-		text-align:left;
-	}
+pre {
+	padding-left: 3px;
+}
+#main {
+	width:776px;
+}
+#question_cell {
+	height:563px;
+	overflow:hidden;
+	padding:0px;
+	text-align:center;
+}
+.quiz_outer_border {
+	border:1px solid black;
+}
+.right {
+  text-align: right;
+}
+.center {
+  text-align: center;
+}
+#question_cell {
+  border: 1px solid black
+}
 '''
