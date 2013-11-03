@@ -47,6 +47,12 @@ class caesar:
 		return ['char_%i' % i for i in range(0, len(self.hotspots))]
 	
 	def check_answer(self,answer):
+		for i in range(0, len(self.hotspots)):
+			if(caesar_util.caeser_encrypt(self.plaintext[self.hotspots[i]], self.key) == answer['char_%i' % i]):
+				continue
+			else:
+				return False
+
 		return True
 		# try:
 		# 	if type(self.correct_answer) is list:

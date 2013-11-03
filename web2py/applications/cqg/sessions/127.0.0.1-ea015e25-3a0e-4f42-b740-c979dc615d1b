@@ -1,0 +1,9 @@
+(dp1
+S'login'
+p2
+S''
+sS'quiz'
+p3
+S"(iquiz\nquiz\np1\n(dp2\nS'timer'\np3\nI1383446788\nsS'question_lib_path'\np4\nS'../question_library/'\np5\nsS'log_name'\np6\nS''\nsS'answer_list'\np7\n(lp8\n(dp9\nS'char_1'\np10\nNsS'char_0'\np11\nNsa(dp12\nS'char_1'\np13\nNsS'char_0'\np14\nNsasS'standalone'\np15\nI00\nsS'question_list'\np16\n(lp17\n(iquestion.caesar\ncaesar\np18\n(dp19\nS'hotspots'\np20\n(lp21\nI0\naI1\nasS'ciphertext'\np22\nS'BBB'\np23\nsS'plaintext'\np24\nS'AAA'\np25\nsS'question_path'\np26\nS'test_caesar/test_0'\np27\nsS'key'\np28\nI1\nsS'question_library_path'\np29\ng5\nsba(iquestion.caesar\ncaesar\np30\n(dp31\ng20\n(lp32\nI1\naI2\nasg22\nS'FGHI'\np33\nsg24\nS'ABCD'\np34\nsg26\nS'test_caesar/test_1'\np35\nsg28\nI5\nsg29\ng5\nsbasS'mark_list'\np36\n(lp37\nI1\naI1\nasS'logged'\np38\nI00\nsS'practice_mode'\np39\nI01\nsS'log_dir'\np40\nS''\nsS'message_list'\np41\n(lp42\nS''\naS''\nasb."
+p4
+s.
