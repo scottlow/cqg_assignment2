@@ -14,10 +14,6 @@ class caesar:
 		self.key = config.key
 		self.hotspots = config.hotspots
 		self.ciphertext = caesar_util.caeser_encrypt(self.plaintext, self.key)		
-
-		self.question_text = "wat"
-		self.answers = [1,1]
-		self.correct_answer = 1
 	
 	def get_question_library_path(self):
 		return self.question_library_path
@@ -39,7 +35,7 @@ class caesar:
 		ciphertext_list = [("cipher text", "top_border right")]
 		for i in range(0, len(self.ciphertext)):
 			if(i in self.hotspots):
-				ciphertext_list.append(("<tt>" + html_util.get_text("char_%i" % i, answer["answer"], 1) + "</tt>", "left_border top_border"))
+				ciphertext_list.append(("<tt>" + html_util.get_text("char_%i" % i, '' if answer['char_%i' % i] is None else answer['char_%i' % i], 1) + "</tt>", "left_border top_border"))
 			else:
 				ciphertext_list.append(("<tt>" + self.ciphertext[i] + "</tt>", "left_border top_border"))
 		html += html_util.get_table([plaintext_list, ciphertext_list], "cellspacing=0 cellpadding=3")
@@ -48,7 +44,7 @@ class caesar:
 		return html	
 
 	def get_input_element_ids(self):
-		return ['answer']
+		return ['char_%i' % i for i in range(0, len(self.hotspots))]
 	
 	def check_answer(self,answer):
 		return True
