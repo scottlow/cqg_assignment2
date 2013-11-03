@@ -13,7 +13,11 @@ class caesar:
 		self.plaintext = config.plaintext
 		self.key = config.key
 		self.hotspots = config.hotspots
-		self.ciphertext = caesar_util.caeser_encrypt(self.plaintext, self.key)
+		self.ciphertext = caesar_util.caeser_encrypt(self.plaintext, self.key)		
+
+		self.question_text = "wat"
+		self.answers = [1,1]
+		self.correct_answer = 1
 	
 	def get_question_library_path(self):
 		return self.question_library_path
@@ -24,8 +28,7 @@ class caesar:
 	def get_css(self,answer):
 		return style
 
-	# TODO FIX ME
-	def get_html():
+	def get_html(self,answer):
 		html = "<style>"
 		html += html_util.make_css_borders(1)
 		html += "</style>"
@@ -42,18 +45,38 @@ class caesar:
 		html += html_util.get_table([plaintext_list, ciphertext_list], "cellspacing=0 cellpadding=3")
 		html += "</center>"	
 
-		return html		
+		return html	
 
 	def get_input_element_ids(self):
 		return ['answer']
 	
-	# TODO FIX ME
 	def check_answer(self,answer):
-		try:
-			if type(self.hotspots) is list:
-				answer_list = [int(i) for i in answer['answer']] #DR1
-				return set(answer_list) == set(self.hotspots)
-			else:
-				return int(answer['answer']) == self.hotspots #DR2
-		except:
-			return False
+		return True
+		# try:
+		# 	if type(self.correct_answer) is list:
+		# 		answer_list = [int(i) for i in answer['answer']] #DR1
+		# 		return set(answer_list) == set(self.correct_answer)
+		# 	else:
+		# 		return int(answer['answer']) == self.correct_answer #DR2
+		# except:
+		# 	return False
+
+style = '''
+	#question_cell div {
+		text-align:left;
+		width:75%;
+		margin:auto;
+	}
+	#question_cell table, #question_cell td {
+		border:0px;
+	}
+	#question_cell {
+		border:1px solid black;
+	}
+	td.top {
+		vertical-align:top;
+	}
+	td.left {
+		text-align:left;
+	}
+'''

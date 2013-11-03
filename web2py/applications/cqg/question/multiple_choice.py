@@ -9,9 +9,9 @@ class multiple_choice:
 		self.question_library_path = question_library_path
 		self.question_path = question_path
 
-		self.question_text = config.question_text
-		self.answers = config.answers
-		self.correct_answer = config.correct_answer
+		self.question_text = "wat"
+		self.answers = [1,1]
+		self.correct_answer = 1
 	
 	def get_question_library_path(self):
 		return self.question_library_path
