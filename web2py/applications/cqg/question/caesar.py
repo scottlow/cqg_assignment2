@@ -31,8 +31,8 @@ class caesar:
 		html += "</style>"
 		html += "<p>Use a <b>caesar</b> cipher with key %d to encrypt the plain text.</p><center>" % self.key
 		plaintext_list = [("plain text", "right")]
-		for char in self.plaintext:
-			plaintext_list.append(("<tt>" + char + "</tt>", "left_border center"))
+		for i in range(0, len(self.plaintext)):
+			plaintext_list.append(("<tt>" + self.plaintext[i] + "</tt>", "left_border center")) #DR1
 		ciphertext_list = [("cipher text", "top_border right")]
 		for i in range(0, len(self.ciphertext)):
 			if(i in self.hotspots):
