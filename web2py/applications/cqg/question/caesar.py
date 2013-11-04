@@ -25,6 +25,7 @@ class caesar:
 		return style
 
 	def get_html(self,answer):
+		j = 0
 		html = "<style type='text/css'>"
 		html += html_util.make_css_borders(1)
 		html += "</style>"
@@ -35,7 +36,8 @@ class caesar:
 		ciphertext_list = [("cipher text", "top_border right")]
 		for i in range(0, len(self.ciphertext)):
 			if(i in self.hotspots):
-				ciphertext_list.append(("<tt>" + html_util.get_text("char_%i" % i, '' if answer['char_%i' % i] is None else answer['char_%i' % i], 1) + "</tt>", "left_border top_border"))
+				ciphertext_list.append(("<tt>" + html_util.get_text("char_%i" % j, '' if answer['char_%i' % j] is None else answer['char_%i' % j]) + "</tt>", "left_border top_border"))
+				j += 1
 			else:
 				ciphertext_list.append(("<tt>" + self.ciphertext[i] + "</tt>", "left_border top_border"))
 		html += html_util.get_table([plaintext_list, ciphertext_list], "cellspacing=0 cellpadding=3")
@@ -54,14 +56,6 @@ class caesar:
 				return False
 
 		return True
-		# try:
-		# 	if type(self.correct_answer) is list:
-		# 		answer_list = [int(i) for i in answer['answer']] #DR1
-		# 		return set(answer_list) == set(self.correct_answer)
-		# 	else:
-		# 		return int(answer['answer']) == self.correct_answer #DR2
-		# except:
-		# 	return False
 
 style = '''
 pre {
