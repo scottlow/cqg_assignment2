@@ -4,57 +4,23 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:7777/" />
-<title>incorrect</title>
+<title>multi_correct</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">incorrect</td></tr>
+<tr><td rowspan="1" colspan="3">save_answer_q1-q2/td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
 	<td>/cqg/quiz?spec=test_caesar</td>
 	<td></td>
 </tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>name=but</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyTextPresent</td>
-	<td>Incorrect</td>
-	<td></td>
-</tr>
+
 <tr>
 	<td>type</td>
 	<td>char_0</td>
 	<td>B</td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>name=but</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyTextPresent</td>
-	<td>Incorrect</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>char_1</td>
-	<td>A</td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>name=but</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyTextPresent</td>
-	<td>Incorrect</td>
-	<td></td>
 </tr>
 <tr>
 	<td>type</td>
@@ -71,7 +37,21 @@
 	<td>Correct</td>
 	<td></td>
 </tr>
-
+<tr>
+	<td>openAndWait</td>
+	<td>/cqg/quiz?currqn=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/cqg/quiz?currqn=0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Correct</td>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>

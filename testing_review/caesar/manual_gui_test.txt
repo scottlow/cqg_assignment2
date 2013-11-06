@@ -1,0 +1,62 @@
+Caesar Manual Test Plan
+
+Open URL
+	http://localhost:7777/cqg/quiz?spec=test_caesar
+
+# Question loads correctly
+
+PF	A caesar encrypt question appears
+
+PF	Question has a grid table with some plaintext and ciphertext boxes
+
+PF	
+
+PF	The left margin is roughly 1/5th of the question box border
+
+PF	The right margin is equal to the left margin
+
+# Question 1 specific details
+
+PF	The word "caesar" in the Question text is the only word bolded
+
+PF	There are 2 rows in the answer table, labeled plain text and cipher text
+
+PF	There are 2 blank open spaces in the cipher text row
+
+PF	The plaintext has 3 letters in the row, A A A
+
+PF	The Question number in the bottom right says 1 of 2
+	
+# Check answers
+
+Type in the letter C in the first blank spot in the ciphertext row and hit "Check answer"
+
+PF	"Incorrect" is displayed in red
+
+Type in the letter B in each of the 2 blank spots in the cipher text row and hit "check answer"
+
+PF	"Correct" is displayed in green
+
+PF	The box "1" in the bottom left is displayed in green
+
+# Question 2 specific details
+
+Click the "2" box in the bottom left
+
+PF	A new caesar question appears
+
+PF	The bottom right shows Question 2 of 2
+
+PF	The left margin is roughly 1/5th of the question box border
+
+PF	The right margin is equal to the left margin
+
+PF	In the ciper text row, there are 2 input boxes and 2 hardcoded letters
+
+PF	The plaintext row shows letters A B C D
+
+
+
+	
+
+	

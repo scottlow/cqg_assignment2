@@ -1,0 +1,32 @@
+DR1:
+
+Since we are looping from 0 to len(self.plaintext), we will always dereference self.plaintext within the proper bounds.
+
+DR2:
+	Since the precondition for get_html states that for each key K in get_input_element_ids():
+	K is also in answer
+	if K was not in submitted answer
+		answer[K] == None
+	and in get_input_element_ids, we return a list of char_%i's between the range of 0 and len(self.hotspots).
+	Then, since we are looping from 0 to len(self.ciphertext) and checking if i is in the hotspot, then since j only increments when we enter a hotspot, answer['char_%i' % j] will always dereference to either an answer or None
+
+DR3:
+	Same as above
+
+DR4:
+	Since we are looping from 0 to len(self.ciphertext), the dereference of self.ciphertext[i] will always be valid.
+
+DR5:
+	Since we are looping from 0 to len(self.hotspots), then self.hotspots[i] will always be a valid dereference.
+
+DR6:
+	Since the precondition for check_answer states that
+	for each key K in get_input_element_ids():
+		K is also in answer
+		if K was not in submitted answer
+			answer[K] == None
+	and since get_input_element_ids retruns a list of char_%i's between 0 and len(self.hotspots), and since we are looping from 0 to len(self.hotspots), we will always dereference answer['char_%i' %i] properly
+
+
+
+	
